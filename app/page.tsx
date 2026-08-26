@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 const whatsapp =
   "https://wa.me/5519998381326?text=Oi%2C%20Espa%C3%A7o%20Serrano!%20Quero%20agendar%20uma%20aula%20experimental.";
+const assetPath = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
 const sports = {
   futevolei: {
@@ -127,7 +128,7 @@ export default function Home() {
       </div>
 
       <div className="cursor-ball" ref={cursorRef} aria-hidden="true">
-        <span><img src="/mikasa-ft5-cursor.png" alt="" /></span>
+        <span><img src={assetPath("/mikasa-ft5-cursor.png")} alt="" /></span>
       </div>
       <div className="page-progress" aria-hidden="true"><i ref={progressRef} /></div>
 
@@ -147,7 +148,7 @@ export default function Home() {
 
       <section className="hero" id="inicio" aria-label="Viva o jogo no Espaço Serrano">
         <img
-          src="/serrano-hero-clean.png"
+          src={assetPath("/serrano-hero-clean.png")}
           alt="Jogador de futevôlei executando um ataque sobre a rede ao pôr do sol no Espaço Serrano"
           className="hero-poster"
         />
@@ -231,7 +232,7 @@ export default function Home() {
           <div className="sport-image">
             <img
               key={sport}
-              src={sport === "beach" ? "/serrano-beach-tennis.png" : "/serrano-futevolei-wide.png"}
+              src={assetPath(sport === "beach" ? "/serrano-beach-tennis.png" : "/serrano-futevolei-wide.png")}
               alt={sport === "beach" ? "Atletas jogando beach tennis na quadra de areia do Espaço Serrano" : "Atleta de futevôlei atacando junto à rede do Espaço Serrano"}
             />
           </div>
@@ -255,7 +256,7 @@ export default function Home() {
 
       <section className="manifesto" id="galeria">
         <div className="manifesto-photo" data-reveal>
-          <img src="/serrano-futevolei-wide.png" alt="Atleta de futevôlei jogando ao pôr do sol no Espaço Serrano" />
+          <img src={assetPath("/serrano-futevolei-wide.png")} alt="Atleta de futevôlei jogando ao pôr do sol no Espaço Serrano" />
           <div className="photo-caption"><span>LUZ DE FIM DE TARDE</span><span>QUADRA 01</span></div>
         </div>
         <div className="manifesto-copy" data-reveal>
@@ -279,13 +280,13 @@ export default function Home() {
 
         <div className="founder-stage">
           <figure className="founder-portrait" data-reveal>
-            <img src="/o-serrano-portrait.png" alt="Serrano, fundador do Espaço Serrano Sports" />
+            <img src={assetPath("/o-serrano-portrait.png")} alt="Serrano, fundador do Espaço Serrano Sports" />
             <figcaption><span>FUNDADOR</span><span>TREINADOR</span><span>MENTOR</span></figcaption>
           </figure>
 
           <article className="founder-story" data-reveal>
             <div className="founder-mini" aria-hidden="true">
-              <img src="/o-serrano-portrait.png" alt="" />
+              <img src={assetPath("/o-serrano-portrait.png")} alt="" />
             </div>
             <span>O FUNDADOR</span>
             <h3>O SERRANO.</h3>
@@ -297,7 +298,7 @@ export default function Home() {
           </article>
 
           <figure className="founder-archive" data-reveal>
-            <img src="/o-serrano-social.png" alt="Arquivo de momentos, treinos e mensagens compartilhadas pelo Serrano" />
+            <img src={assetPath("/o-serrano-social.png")} alt="Arquivo de momentos, treinos e mensagens compartilhadas pelo Serrano" />
             <figcaption><span>ARQUIVO SERRANO</span><span>MENTALIDADE • TÉCNICA • COMUNIDADE</span></figcaption>
           </figure>
         </div>
@@ -325,7 +326,7 @@ export default function Home() {
             <span className="bento-number">02</span><div className="icon-cup" aria-hidden="true" /><h3>LANCHONETE</h3><p>O pós-jogo também é parte da experiência.</p>
           </article>
           <article className="bento bento--photo" data-reveal>
-            <img src="/serrano-beach-tennis.png" alt="Atletas jogando beach tennis no Espaço Serrano" /><span>BEACH<br />TENNIS</span>
+            <img src={assetPath("/serrano-beach-tennis.png")} alt="Atletas jogando beach tennis no Espaço Serrano" /><span>BEACH<br />TENNIS</span>
           </article>
           <article className="bento" data-reveal>
             <span className="bento-number">03</span><div className="icon-parking" aria-hidden="true">P</div><h3>ESTACIONAMENTO<br />PRÓPRIO</h3><p>Mais tempo em quadra, menos preocupação.</p>
