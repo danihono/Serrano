@@ -6,8 +6,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Espaço Serrano | Futevôlei e Beach Tennis em Vinhedo",
   description: "Quadras de areia, aulas de futevôlei e beach tennis, alto rendimento, day use e comunidade em Vinhedo-SP.",
-  other: { "codex-preview": "development" },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: {
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/favicon.svg`,
+    shortcut: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/favicon.svg`,
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
