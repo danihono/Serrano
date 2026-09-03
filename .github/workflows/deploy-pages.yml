@@ -2,7 +2,9 @@ name: Publicar no GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - claude/tres-repos-github-pages-h3sh76
   workflow_dispatch:
 
 permissions:
@@ -38,6 +40,11 @@ jobs:
 
       - name: Configurar o GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Desativar o Jekyll na pasta publicada
+        run: touch ./out/.nojekyll
 
       - name: Enviar os arquivos publicados
         uses: actions/upload-pages-artifact@v4
